@@ -1,0 +1,40 @@
+.foot {
+    background-color: #000;
+    opacity: .3;
+    color: #fff;    
+}
+
+.foot li, .foot button {
+    background-color: rgba(0,0,0,.4);
+}
+
+.foot li {
+    text-align: left;
+}
+
+.foot li a {
+    color: #fff;;
+}
+
+.clause {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    text-align: justify;  
+    padding: 1em; 
+}
+
+.clause-btn,
+.clause-btn:focus,
+.clause-btn:visited {
+    border: none;
+    box-shadow: none; 
+    color: #fff; 
+    display: flex;
+    justify-content: center;
+}
+
+.foot-add {
+    display: flex;
+    justify-content: center;
+}
