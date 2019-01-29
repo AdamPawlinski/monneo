@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import {    
     Container, 
     Col,
@@ -31,9 +32,9 @@ class Footer extends React.Component {
                     <Row>
                         <Col lg={{size:4, offset:1}} sm="12">
                             <ul className="list-group list-group-flush">
-                                <li className="list-group-item"><a href="#">Polityka prywatności</a></li>
-                                <li className="list-group-item"><a href="#">Cookies</a></li>
-                                <li className="list-group-item"><a href="#">Kontakt</a></li>
+                                <li className="list-group-item"><NavLink to="/Policy" >Polityka prywatności</NavLink></li>
+                                <li className="list-group-item"><NavLink to="/Cookies" >Cookies</NavLink></li>
+                                <li className="list-group-item"><NavLink to="/Contact" >Kontakt</NavLink></li>
                             </ul>
                         </Col>
                         <Col lg="2" sm="12">

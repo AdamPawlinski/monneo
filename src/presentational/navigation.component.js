@@ -1,12 +1,12 @@
 import React from 'react';
-import {
+import {Link, NavLink} from 'react-router-dom';
+import ReactStrap, {
     Collapse,
     Navbar,
     NavbarToggler,
     NavbarBrand,
     Nav,
-    NavItem,
-    NavLink,
+    NavItem,   
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
@@ -38,9 +38,9 @@ class Navigation extends React.Component {
             <header>
                 {/* <Container>
                 <Row> */}
-                <Navbar style={navigationStyles.navbar} color="light" expand="md" fixed="top" light>
+                <Navbar className="navbar" color="light" expand="md" fixed="top" light>
                     {/* <Col lg={{size: 2, offset: 1}} sm={{size: 8, offset: 2}}> */}
-                    <NavbarBrand href="#">
+                    <NavbarBrand href="/">
                         <img src="../resources/monneo-logo.png" alt="logo"/>
                     </NavbarBrand>
                     {/* </Col> */}
@@ -49,13 +49,13 @@ class Navigation extends React.Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <NavLink href="#">Pytania i odpowiedzi</NavLink>
+                                <NavLink to="/QandA">Pytania i odpowiedzi</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="#">O nas</NavLink>
+                                <NavLink to="/AboutUs">O nas</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="#">Kontakt</NavLink>
+                                <NavLink to="/Contact">Kontakt</NavLink>
                             </NavItem>                    
                         </Nav> 
                     </ Collapse> 
