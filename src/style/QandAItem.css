@@ -1,0 +1,17 @@
+.qAndA-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+}
+
+.qAndA-header h5 {
+    margin-bottom: 0;
+}
+
+.qAndA-open-btn {
+    font-weight: 600;
+}
+.qAndA-text {
+    text-align: justify;
+    margin-left: 5%;
+}

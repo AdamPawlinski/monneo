@@ -6,8 +6,9 @@ import ReactStrap, {
     NavbarToggler,
     NavbarBrand,
     Nav,
-    NavItem,   
+    NavItem,       
     UncontrolledDropdown,
+    Dropdown,
     DropdownToggle,
     DropdownMenu,
     DropdownItem, 
@@ -22,14 +23,22 @@ class Navigation extends React.Component {
     constructor(props) {
         super(props);
         this.toggle = this.toggle.bind(this);
+        this.toggleDropdown = this.toggleDropdown.bind(this);
         this.state = {
-            isOpen: false
+            isOpen: false,
+            dropdownOpen: false
         };
     }
 
     toggle() {
         this.setState({
             isOpen: !this.state.isOpen 
+        });
+    }
+
+    toggleDropdown() {
+        this.setState({
+            dropdownOpen: !this.state.dropdownOpen 
         });
     }
 
@@ -40,8 +49,8 @@ class Navigation extends React.Component {
                 <Row> */}
                 <Navbar className="navbar" color="light" expand="md" fixed="top" light>
                     {/* <Col lg={{size: 2, offset: 1}} sm={{size: 8, offset: 2}}> */}
-                    <NavbarBrand href="/">
-                        <img src="../resources/monneo-logo.png" alt="logo"/>
+                    <NavbarBrand href={<NavLink to="/"/>}>
+                        <img src="../resources/monneo-logo.png" alt="logo" />
                     </NavbarBrand>
                     {/* </Col> */}
                     {/* <Col lg={{size: 6, offset: 2}} sm={{size: 4, offset: 4}}> */}
@@ -49,13 +58,23 @@ class Navigation extends React.Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <NavLink to="/QandA">Pytania i odpowiedzi</NavLink>
+                                <NavLink to="/QandA" className="nav-link">Pytania i odpowiedzi</NavLink>
+                            </NavItem>
+                            <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
+                                <DropdownToggle nav caret>
+                                    Dropdown
+                                </DropdownToggle>
+                                <DropdownMenu>
+                                <DropdownItem header>Header</DropdownItem>                                
+                                <DropdownItem>Another Action</DropdownItem>                                
+                                <DropdownItem>Another Action</DropdownItem>
+                                </DropdownMenu>
+                            </Dropdown>
+                            <NavItem>
+                                <NavLink to="/AboutUs" className="nav-link">O nas</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink to="/AboutUs">O nas</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink to="/Contact">Kontakt</NavLink>
+                                <NavLink to="/Contact" className="nav-link">Kontakt</NavLink>
                             </NavItem>                    
                         </Nav> 
                     </ Collapse> 

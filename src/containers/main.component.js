@@ -8,6 +8,7 @@ import AboutUs from '../presentational/AboutUs.component';
 import Contact from '../presentational/Contact.component';
 import Policy from '../presentational/Policy.component';
 import Cookies from '../presentational/Cookies.component';
+import NotFound from '../presentational/NotFound.component';
 
 import {    
     Container, 
@@ -28,14 +29,15 @@ class Main extends React.Component {
                         <Navigation />
                         <Container className="content" fluid>                
                             <Row>
-                                <Col xl={{size: 10, offset: 1}} sm="12">
+                                <Col lg="12" sm="12">
                                     <Switch>
                                         <Route exact path="/" component={Home}/>
-                                        <Route path="/QandA" component={QandA}/>
-                                        <Route path="/AboutUs" component={AboutUs}/>
-                                        <Route path="/Contact" component={Contact}/>
-                                        <Route path="/Policy" component={Policy}/>
-                                        <Route path="/Cookies" component={Cookies}/>                                        
+                                        <Route exact path="/QandA" component={QandA}/>
+                                        <Route exact path="/AboutUs" component={AboutUs}/>
+                                        <Route exact path="/Contact" component={Contact}/>
+                                        <Route exact path="/Policy" component={Policy}/>
+                                        <Route exact path="/Cookies" component={Cookies}/>
+                                        <Route path="/*" component={NotFound}/>                                     
                                     </Switch>
                                 </Col>
                             </Row>

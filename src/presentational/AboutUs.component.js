@@ -11,6 +11,7 @@ import {
     CardSubtitle, 
     Button
 } from 'reactstrap';
+import faker from 'faker';
 
 class AboutUs extends React.Component {
     constructor(props) {
@@ -21,7 +22,7 @@ class AboutUs extends React.Component {
         return (            
             <div>
                 <Card>
-                    <CardImg top width="100%" src="../resources/management.png" alt="management" />
+                    <CardImg top width="100%" src={faker.image.people()} alt="management" />
                     <CardBody>
                         <CardTitle>Zarząd</CardTitle>
                         <CardSubtitle>Monneo S.A.</CardSubtitle>

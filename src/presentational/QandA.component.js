@@ -10,7 +10,42 @@ import {
     Button,
     Fade
     } from 'reactstrap';
+
+import QandAItem from './QandA.item.component';
+// import itemsList from './itemsList.json';
 import QandAStyles from '../style/QandA.css';
+
+const itemsList = [
+    {
+        "id": 1,
+        "itemHead": "Kto może wnioskować o pożyczkę",
+        "itemText": "Pożyczka jest przeznaczona dla wszystkich osób, które: posiadają stałe miesięczne udokumentowane dochody, wiek 25-80 lat, brak negatywnej historii kredytowej w BIK, KRD, BIG InfoMonitor i innych"
+    },
+    {
+        "id": 2,
+        "itemHead": "Jakie jest oprocentowanie pożyczki?",
+        "itemText": "Wysokość odsetek określa umowa, przy czym oprocentowanie nie może być wyższe niż dwukrotność odsetek ustawowych. Informację na temat aktualnej wysokości oprocentowania pożyczki znajdziesz tutaj."
+    },
+    {
+        "id": 3,
+        "itemHead": "Co to jest RRSO?",
+        "itemText": `RRSO, czyli Roczna Rzeczywista Stopa Oprocentowania wyliczona jest zgodnie ze wzorem zamieszczonym w Załączniku do Ustawy o Kredycie Konsumenckim z dnia 12 maja 2011 r. 
+                    Prawo nakłada obowiązek informowania Klientów o wielkości stopy RRSO. 
+                    Wielkość ta zależy w dużej mierze od okresu na jaki udzielana jest pożyczka. Zapraszamy do zapoznania się z artykułem publikowanym w Gazecie Bankowej oraz Rzeczpospolitej na temat RRSO. 
+                    Artykuł ten wyjaśnia błędne postrzeganie RRSO oraz tłumaczy dlaczego przy takim samym koszcie pożyczki a różnych okresach spłaty następuje nieuzasadniony wzrost wartości stopy RRSO. Więcej informacji znajdziesz tutaj.`
+    },
+    {
+        "id": 4,
+        "itemHead": "Czy mogę odstąpić od Umowy pożyczki?",
+        "itemText": "Niestety nie."
+    },
+    {
+        "id": 5,
+        "itemHead": "Jaka jest maksymalna kwota pożyczki?",
+        "itemText": "Maksymalna kwota pożyczki to 5000 zł."
+    }
+]
+
 
 class QandA extends React.Component {
     constructor(props) {
@@ -27,55 +62,22 @@ class QandA extends React.Component {
         })
     }
 
-    render() {
+    render() {        
         return (
-            <ListGroup>
-                <ListGroupItem>
-                    <ListGroupItemHeading>Kto może wnioskować o pożyczkę?</ListGroupItemHeading>
-                    <Button className="open-btn" color="light" onClick={this.toggle}>rozwiń</Button> 
-                    <Fade in={this.state.fadeIn}>
-                        <ListGroupItemText>
-                            Pożyczka jest przeznaczona dla wszystkich osób, które:                        
-                                posiadają stałe miesięczne udokumentowane dochody,
-                                wiek 25-80 lat,
-                                brak negatywnej historii kredytowej w BIK, KRD, BIG InfoMonitor i innych
-                            
-                        </ListGroupItemText>
-                    </Fade>
-                </ListGroupItem>
-                <ListGroupItem>
-                    <ListGroupItemHeading>Jakie jest oprocentowanie pożyczki?</ListGroupItemHeading>
-                    <Button className="open-btn" color="light" onClick={this.toggle}>rozwiń</Button> 
-                    <Fade in={this.state.fadeIn}>
-                        <ListGroupItemText>Wysokość odsetek określa umowa, przy czym oprocentowanie nie może być wyższe niż dwukrotność odsetek ustawowych. 
-                        Informację na temat aktualnej wysokości oprocentowania pożyczki znajdziesz tutaj.</ListGroupItemText>
-                    </Fade>
-                </ListGroupItem>
-                <ListGroupItem>
-                    <ListGroupItemHeading>Co to jest RRSO?</ListGroupItemHeading>
-                    <Button className="open-btn" color="light" onClick={this.toggle}>rozwiń</Button> 
-                    <Fade in={this.state.fadeIn}>
-                        <ListGroupItemText>RRSO, czyli Roczna Rzeczywista Stopa Oprocentowania wyliczona jest zgodnie ze wzorem zamieszczonym w Załączniku do Ustawy o Kredycie Konsumenckim z dnia 12 maja 2011 r. 
-                        Prawo nakłada obowiązek informowania Klientów o wielkości stopy RRSO. 
-                        Wielkość ta zależy w dużej mierze od okresu na jaki udzielana jest pożyczka. Zapraszamy do zapoznania się z artykułem publikowanym w Gazecie Bankowej oraz Rzeczpospolitej na temat RRSO. 
-                        Artykuł ten wyjaśnia błędne postrzeganie RRSO oraz tłumaczy dlaczego przy takim samym koszcie pożyczki a różnych okresach spłaty następuje nieuzasadniony wzrost wartości stopy RRSO. Więcej informacji znajdziesz tutaj.</ListGroupItemText>
-                    </Fade>
-                </ListGroupItem>
-                <ListGroupItem>
-                    <ListGroupItemHeading>Czy mogę odstąpić od Umowy pożyczki?</ListGroupItemHeading>
-                    <Button className="open-btn" color="light" onClick={this.toggle}>rozwiń</Button> 
-                    <Fade in={this.state.fadeIn}>
-                        <ListGroupItemText>Niestety nie.</ListGroupItemText>
-                    </Fade>
-                </ListGroupItem>
-                <ListGroupItem>
-                    <ListGroupItemHeading>Jaka jest maksymalna kwota pożyczki?</ListGroupItemHeading>
-                    <Button className="open-btn" color="light" onClick={this.toggle}>rozwiń</Button> 
-                    <Fade in={this.state.fadeIn}>
-                        <ListGroupItemText>Maksymalna kwota pożyczki to 5000 zł.</ListGroupItemText>
-                    </Fade>
-                </ListGroupItem>
-            </ListGroup>
+            <React.Fragment>                           
+                <Row>
+                    <Col>
+                        <h2>Pytania i odpowiedzi</h2>
+                    </Col>
+                </Row>             
+                <ListGroup lg={{size:10, offset:1}}>
+                    {   
+                        itemsList.map(
+                            (item) => <QandAItem item={item} key={item.id}/>
+                        )    
+                    }
+                </ListGroup>
+            </React.Fragment>
         )
     }
 }
