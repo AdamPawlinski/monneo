@@ -7,6 +7,7 @@ import {
     Button,
     Fade
     } from 'reactstrap';
+import logo from '../resources/monneo-logo_white.png';
 import footerStyles from '../style/footer.css';
 
 class Footer extends React.Component {
@@ -20,18 +21,27 @@ class Footer extends React.Component {
         this.setState({
             fadeIn: !this.state.fadeIn
         });
-        // if (this.state.fadeIn === true) {
-        //     const btn = document.querySelector('.footer-clause-btn');
-        //     const clauseFade = document.querySelector('.footer-clause-fade');
-        //     clauseFade.appendChild(btn);
-        // }
+        const btn = document.querySelector('#footer-btn');
+        const clauseFade = document.querySelector('#footer-clause-fade');
+        if (this.state.fadeIn === true) {            
+            btn.remove();     
+            setTimeout(clauseFade.after(
+                <Button className="footer-clause-btn" id="footer-btn" color="light" onClick={this.toggle}>zwiń</Button>
+            )); 
+        }
+        else {
+            btn.remove(btn);
+            clauseFade.before(
+                <Button className="footer-clause-btn" id="footer-btn" color="light" onClick={this.toggle}>rozwiń</Button>
+            );
+        }
     }
     render() {
         return (
             <footer>
                 <Container className="foot" fluid>
                     <Row>   
-                        <Col lg="6"><img src="../resources/monneo-logo_white.png"/></Col>
+                        <Col lg={{size:5, offset:1}}><img src={logo}/></Col>
                         <Col lg="6"></Col>
                     </Row>
                     <Row>
@@ -65,8 +75,8 @@ class Footer extends React.Component {
 
                                 Opłata za minutę połączenia zgodna z taryfą operatora.
                             </p>
-                            <Button className="footer-clause-btn" color="light" onClick={this.toggle}>rozwiń</Button> 
-                            <Fade in={this.state.fadeIn} className="footer-clause-fade">
+                            <Button className="footer-clause-btn" id="footer-btn" color="light" onClick={this.toggle}>rozwiń</Button> 
+                            <Fade in={this.state.fadeIn} id="footer-clause-fade">
                                 <p>
                                     Pożyczkodawcą jest Monneo S.A. Przyznanie pożyczki zależy od wyniku oceny zdolności kredytowej wnioskodawcy. Maksymalna wysokość pierwszej pożyczki przez internet lub telefon to ....... zł. Jednorazowa opłata rejestracyjna, która jest niezwłocznie zwracana wnioskodawcy, wynosi 1 grosz (gdy Klient dokonuje opłaty rejestracyjnej na jeden z rachunków bankowych, w którym Spółka posiada swoje konto). Reprezentatywny przykład dla pierwszej pożyczki udzielanej za pośrednictwem strony internetowej www.monneo.pl lub przez telefon: Rzeczywista Roczna Stopa Oprocentowania (RRSO) to 0% przy założeniach: całkowita kwota pożyczki 1000; całkowita kwota do zapłaty 1000 zł; oprocentowanie stałe w skali roku 0%; całkowity koszt pożyczki 0 zł; umowa na 30 dni. Stan na ......... r. Przyznanie pożyczki zależy od wyniku oceny zdolności kredytowej wnioskodawcy.
 

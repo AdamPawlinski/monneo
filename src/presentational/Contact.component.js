@@ -4,10 +4,10 @@ import {
     Col,
     Row,
     Card, 
-    CardImg, 
-    CardText, 
+    CardImg,  
     CardBody,
     CardTitle, 
+    CardText,
     CardSubtitle,
     Button, 
     Form, 
@@ -17,6 +17,9 @@ import {
     FormText
 } from 'reactstrap';
 import faker from 'faker';
+import ContactStyles from "../style/Contact.css"
+import management from "../resources/management.png";
+import { Manager } from 'react-popper';
 class Contact extends React.Component {
     constructor(props) {
         super(props);        
@@ -25,29 +28,33 @@ class Contact extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Card>
-                    <CardImg top width="100%" src={faker.image.people()} alt="management" />
-                    <CardBody>
-                        <CardTitle>Jeśli chcesz sie z nami skontaktować</CardTitle>
-                        <CardSubtitle>napisz lub zadzwoń</CardSubtitle>
-                        <CardText>  
-                            tel. 123 123 123
-                            email:biuro@monneo.pl
-                            adres: 
-                            ul. ..........
-                            Wrocław
-                        </CardText>                    
-                    </CardBody>
-                </Card>
+                <Row>
+                    <Col lg={{size:8, offset:2}}> 
+                        <Card>
+                            <CardImg top src={management} alt="management" />
+                            <CardBody className="card">
+                                <CardTitle>Jeśli chcesz sie z nami skontaktować</CardTitle>
+                                <CardSubtitle>napisz lub zadzwoń</CardSubtitle>
+                                <CardText className="contact-card-text">
+                                    <span>tel. 123 123 123</span>
+                                    <span>email:biuro@monneo.pl</span>
+                                    <span>adres: </span>
+                                    <span>ul. ..........</span>
+                                    <span>Wrocław</span>                                     
+                                </CardText>                   
+                            </CardBody>
+                        </Card>
+                    </Col>
+                </Row>
                 <Form>
                     <Row>
-                        <Col lg={{size:4, offset:2}}>
+                        <Col lg={{size:3, offset:3}}>
                             <FormGroup>
                                 <Label for="exampleText">Imie</Label>
                                 <Input type="text" name="name" id="exampleText" placeholder="imie"/>
                             </FormGroup>
                         </Col>
-                        <Col lg="4">
+                        <Col lg="3">
                             <FormGroup>
                                 <Label for="exampleText">Nazwisko</Label>
                                 <Input type="text" name="surname" id="exampleText" placeholder="nazwisko"/>
@@ -63,7 +70,7 @@ class Contact extends React.Component {
                         </Col>
                     </Row>
                     <Row> 
-                        <Col lg={{size:8, offset:2}}>
+                        <Col lg={{size:6, offset:3}}>
                             <FormGroup>
                                 <Label for="exampleText">Wiadomość</Label>
                                 <Input type="textarea" name="message" id="exampleText" placeholder="wiadomość"/>
@@ -71,7 +78,7 @@ class Contact extends React.Component {
                         </Col>
                     </Row>
                     <Row> 
-                        <Col lg={{size:8, offset:2}}>
+                        <Col className="contact-form-clause" lg={{size:6, offset:3}}>
                             <FormGroup check>
                                 <Label check>
                                     <Input type="checkbox" />{' '}
@@ -81,7 +88,7 @@ class Contact extends React.Component {
                         </Col>
                     </Row>
                     <Row> 
-                        <Col lg={{size:8, offset:2}}>
+                        <Col className="contact-form-clause" lg={{size:6, offset:3}}>
                             <FormGroup check>
                                 <Label check>
                                     <Input type="checkbox" />{' '}
@@ -91,7 +98,7 @@ class Contact extends React.Component {
                         </Col>
                     </Row>
                     <Row> 
-                        <Col lg={{size:8, offset:2}}>
+                        <Col className="contact-form-clause" lg={{size:6, offset:3}}>
                             <FormGroup check>
                                 <Label check>
                                     <Input type="checkbox" />{' '}

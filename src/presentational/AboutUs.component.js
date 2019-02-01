@@ -22,7 +22,7 @@ class AboutUs extends React.Component {
         return (            
             <div>
                 <Card>
-                    <CardImg top width="100%" src={faker.image.people()} alt="management" />
+                    <CardImg top height="auto" max-width="100%" className="img-fluid" src={require('../resources/management.png')} alt="management" />
                     <CardBody>
                         <CardTitle>Zarząd</CardTitle>
                         <CardSubtitle>Monneo S.A.</CardSubtitle>

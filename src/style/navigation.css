@@ -2,5 +2,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.18), 0 2px 7px 0 rgba(0,0,0,.15);     
+    opacity: .9;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.18), 0 2px 7px 0 rgba(0,0,0,.15);
+    max-height: 10vh;  
+}
+
+.navbar img {
+    max-height: 8vh;
+}
+
+.nav-item:hover {
+    color: rgb(221,19,123);
+} 
+
+.active {
+    color: rgb(0,109,165);
 }

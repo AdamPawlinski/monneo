@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import {    
     Container, 
     Col,
@@ -15,28 +16,32 @@ import {
     CardTitle, 
     CardSubtitle,
     Jumbotron,
-    Button
+    Button    
 } from 'reactstrap';
 import faker from 'faker';
-import HomeStyles from '../style/HomeStyles.css';
+import HomeStyles from '../style/Home.css';
+import shakingHands from '../resources/shaking-hands.png';
+import money from '../resources/money.png';
+import mobilePhones from '../resources/mobile-phones.png';
+
 // import items from './imageCarousel.json';
 
 const items = [
     {
       id: 1,
-      src: faker.image.people(),
-      altText: 'Slide 1',
-      caption: 'Slide 1'
+      src: '../resources/shaking-hands.png',
+      altText: 'Monneo - Weź pożyczke i ciesz sie życiem',
+      caption: 'Weź pożyczke i ciesz sie życiem'
     },
     {
       id: 2,
-      src: faker.image.people(),
+      src: '../resources/money.png',
       altText: 'Slide 2',
       caption: 'Slide 2'
     },
     {
       id: 3,
-      src: faker.image.people(),
+      src: '../resources/mobile-phones.png',
       altText: 'Slide 3',
       caption: 'Slide 3'
     }
@@ -86,20 +91,22 @@ class Home extends React.Component {
                     onExited={this.onExited}
                     key={item.id}
                 >
-                <img src={item.src} alt={item.altText} />
+                <img src={shakingHands} alt={item.altText} />
                 <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
                 </CarouselItem>
             );
         });
 
-        return (
+        return (            
             <Container fluid>
-                <Row>
-                    <Col lg="12">                      
+                <Row className="home-row">
+                    <Col className="home-col" lg="12">                      
                         <Carousel
                             activeIndex={activeIndex}
                             next={this.next}
                             previous={this.previous}
+                            pause={'hover'}
+                            interval={6000}
                         >
                             <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
                             {slides}
@@ -108,8 +115,8 @@ class Home extends React.Component {
                         </Carousel>
                     </Col>
                 </Row>
-                <Row>
-                    <Col lg="4">
+                <Row className="home-row">
+                    <Col className="home-col" lg={{size:4, offset:2}}>
                         <Card>
                             <CardImg top width="100%" src={faker.image.people()} alt="management" />
                             <CardBody>
@@ -118,18 +125,8 @@ class Home extends React.Component {
                                 <CardText>Lorem ipsum dolor sit amet consectetur adipiscing elit Lorem ipsum dolor sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam Lorem ipsum dolor</CardText>                                      
                             </CardBody>
                         </Card>                                          
-                    </Col>
-                    <Col lg="4">  
-                        <Card>
-                            <CardImg top width="100%" src={faker.image.people()} alt="management" />
-                            <CardBody>
-                                <CardTitle>Zarząd</CardTitle>
-                                <CardSubtitle>Monneo S.A.</CardSubtitle>
-                                <CardText>Lorem ipsum dolor sit amet consectetur adipiscing elit Lorem ipsum dolor sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam Lorem ipsum dolor</CardText>                    
-                            </CardBody>
-                        </Card>                   
-                    </Col> 
-                    <Col lg="4">  
+                    </Col>                     
+                    <Col className="home-col" lg={{size:4}}>  
                         <Card>
                             <CardImg top width="100%" src={faker.image.people()} alt="management" />
                             <CardBody>
@@ -140,21 +137,21 @@ class Home extends React.Component {
                         </Card>                   
                     </Col>   
                 </Row>
-                <Row>
-                    <Col lg="12">
+                <Row className="home-row">
+                    <Col className="home-col" lg="12">
                         <Jumbotron fluid>
-                            <h1 className="display-3">Hello, world!</h1>
-                            <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
+                            <h1 className="display-3">Pożyczka w Monneo</h1>
+                            <p className="lead">Łatwo bierzesz, łatwo spłacasz</p>
                             <hr className="my-2" />
-                            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                            <p>Dowiedz sie jak łatwo wziąc naszą pożyczke i jak lekko ją spłacać</p>
                             <p className="lead">
-                            <Button color="primary">Learn More</Button>
+                            <NavLink to="/Loan"><Button color="primary">Weż pożyczke</Button></NavLink>
                             </p>
                         </Jumbotron>                   
                     </Col>   
                 </Row>
-                <Row>
-                    <Col lg="4">
+                <Row className="home-row">
+                    <Col className="home-col" lg="4">
                         <Card>
                             <CardImg top width="100%" src={faker.image.people()} alt="management" />
                             <CardBody>
@@ -164,7 +161,7 @@ class Home extends React.Component {
                             </CardBody>
                         </Card>                                          
                     </Col>
-                    <Col lg="4">  
+                    <Col className="home-col" lg="4">  
                         <Card>
                             <CardImg top width="100%" src={faker.image.people()} alt="management" />
                             <CardBody>
@@ -174,7 +171,7 @@ class Home extends React.Component {
                             </CardBody>
                         </Card>                   
                     </Col> 
-                    <Col lg="4">  
+                    <Col className="home-col" lg="4">  
                         <Card>
                             <CardImg top width="100%" src={faker.image.people()} alt="management" />
                             <CardBody>

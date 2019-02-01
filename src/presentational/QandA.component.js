@@ -65,12 +65,12 @@ class QandA extends React.Component {
     render() {        
         return (
             <React.Fragment>                           
-                <Row>
+                <Row className="row-qAndA">
                     <Col>
                         <h2>Pytania i odpowiedzi</h2>
                     </Col>
                 </Row>             
-                <ListGroup lg={{size:10, offset:1}}>
+                <ListGroup className="item-qAndA" lg={{size:10, offset:1}}>
                     {   
                         itemsList.map(
                             (item) => <QandAItem item={item} key={item.id}/>

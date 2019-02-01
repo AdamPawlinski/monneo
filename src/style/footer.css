@@ -1,11 +1,10 @@
 .foot {
-    background-color: #000;
-    opacity: .3;
+    background-color: rgb(0,109,165);
     color: #fff;    
 }
 
 .foot li, .foot button {
-    background-color: rgba(0,0,0,.4);
+    background-color: rgb(0,109,165);
 }
 
 .foot li {
@@ -14,6 +13,12 @@
 
 .foot li a {
     color: #fff;;
+}
+
+.foot img {
+    display: flex;
+    align-items: flex-start;
+    max-height: 8vh;
 }
 
 .clause {
@@ -44,10 +49,4 @@
 }
 .show {
     display: block;
-}
-
-.footer-clause-btn:visited {
-    content: 'zwiń';
-    top: 50%;
-    left: 50%;
 }

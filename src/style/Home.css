@@ -1,0 +1,24 @@
+.home-row {
+    height: 100vh;
+    margin: 3% auto;
+    top: 30vh;
+}
+
+.home-row:first-of-type {
+    margin-top: 1vh;
+}
+
+.carousel-item img {
+    height: 100vh;
+    width: 100vw;    
+}
+
+.carousel-item h3, 
+.carousel-item p {
+    text-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+}
+
+.home-col {
+    padding: 0;
+    width: 100%;
+}
