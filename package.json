@@ -1,5 +1,5 @@
 {
-  "name": "monneo-project",
+  "name": "monneo",
   "version": "1.0.0",
   "description": "Monneo financial site project",
   "private": true,
@@ -26,12 +26,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AdamPawlinski/monneo.git"
+    "url": "git+https://AdamPawlinski:Flash78!@github.com/AdamPawlinski/monneo.git"
   },
   "author": "Adam Pawliński",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AdamPawlinski/monneo/issues"
+    "url": "https://github.com/AdamPawlinski/monneo/issues", 
+    "email": "adam.pawlinski@gmail.com"
   },
   "homepage": "https://github.com/AdamPawlinski/monneo",
   "eslintConfig": {
