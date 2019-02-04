@@ -34,7 +34,7 @@
     "url": "https://github.com/AdamPawlinski/monneo/issues", 
     "email": "adam.pawlinski@gmail.com"
   },
-  "homepage": "https://github.com/AdamPawlinski/monneo",
+  "homepage": "https://adampawlinski.github.io/monneo/",
   "eslintConfig": {
     "extends": "react-app"
   },

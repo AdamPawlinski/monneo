@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/AdamPawlinski/monneo/precache-manifest.de6d6d7d9b8dc080a7be591c1d6f8050.js"
+  "/monneo/precache-manifest.5c3b95690ec0fd4835e7b957804cf9f9.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/AdamPawlinski/monneo/index.html", {
+workbox.routing.registerNavigationRoute("/monneo/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
