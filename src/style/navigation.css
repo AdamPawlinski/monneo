@@ -3,20 +3,20 @@
     top: 0;
     left: 0;    
     width: 100%;  
-    z-index: 100;  
+    z-index: 10;  
     background-color: rgb(255,255,255);
+    background-color: #efeff0;
 }
 
 .top-header {        
-    max-height: 8vh;
-    margin: 0 10vw 0 10 vw;
+    height: 8vh;    
 }
 
 .bottom-header-menu {    
     top: 0;   
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.18), 0 2px 7px 0 rgba(0,0,0,.15);
-    max-height: 8vh; 
-    margin: 0 10vw 0 10 vw; 
+    height: 8vh; 
+    z-index: 20;
 }
 
 .navbar-item-header {      
@@ -28,13 +28,17 @@
 }
 
 .logo {    
-    max-height: 6vh;
+    max-height: 6vh; 
+}
+
+.logo-container {
+    transition: 2s all ease;
 }
 
 .header-whole.scroll .logo-container {
     position: relative;
     top: 8vh;
-    z-index: 100;
+    z-index: 30;
 }
 
 .header-whole.scroll .bottom-nav {
@@ -49,12 +53,19 @@
     color: rgb(221,19,123);
 } 
 
+.header-whole.scroll .navContact {
+    position: relative;
+    top: 8vh;
+    z-index: 30;
+}
+
 .navContact {
     color: rgb(255,255,255);
     background-color: rgb(0,109,165);
     min-width: 12vw;
     height: 8vh;
     padding: 0 .5rem;
+    transition: 2s all ease;
 }
 
 .fa-phone-volume {

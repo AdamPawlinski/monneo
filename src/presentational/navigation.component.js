@@ -84,7 +84,7 @@ class Navigation extends React.Component {
                         </Row>
                     </Container>
                 </div>
-                <Navbar className="navbar bottom-header-menu sticky-top" color="light" expand="md" light>    
+                <Navbar className="navbar-nav bottom-header-menu sticky-top" color="light" expand="md" light>    
                     <Container>             
                         <NavbarToggler onClick={this.toggle}/>
                         <Collapse isOpen={this.state.isOpen} navbar>
