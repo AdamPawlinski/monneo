@@ -17,7 +17,8 @@ import ReactStrap, {
     Row
     } from 'reactstrap';
 import logo from "../resources/monneo-logo.png";
-import navigationStyles from '../style/navigation.css';
+import phone from "../resources/phone-volume-solid.svg";
+import '../style/navigation.css';
 
 
 class Navigation extends React.Component {
@@ -25,10 +26,16 @@ class Navigation extends React.Component {
         super(props);
         this.toggle = this.toggle.bind(this);
         this.toggleDropdown = this.toggleDropdown.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
         this.state = {
             isOpen: false,
-            dropdownOpen: false
+            dropdownOpen: false,
+            visible: 0
         };
+    }
+
+    componentWillMount() {
+        window.addEventListener('scroll', this.handleScroll);
     }
 
     toggle() {
@@ -43,45 +50,61 @@ class Navigation extends React.Component {
         });
     }
 
+    handleScroll() {
+        if (window.scrollY > 0) {
+            this.setState({
+                visible: '-8vh'
+            });
+            document.querySelector('#header').classList.add('scroll');
+        } else {
+            this.setState({
+                visible: 0
+            });
+            document.querySelector('#header').classList.remove('scroll');
+        }
+    }
+
     render() {
         return (
-            <header>
-                {/* <Container>
-                <Row> */}
-                <Navbar className="navbar" color="light" expand="md" fixed="top" light>
-                    {/* <Col lg={{size: 2, offset: 1}} sm={{size: 8, offset: 2}}> */}
-                    <NavbarBrand href={<NavLink to="/"/>}>
-                        <img src={logo} alt="logo" />
-                    </NavbarBrand>
-                    {/* </Col> */}
-                    {/* <Col lg={{size: 6, offset: 2}} sm={{size: 4, offset: 4}}> */}
-                    <NavbarToggler onClick={this.toggle}/>
-                    <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
-                            <NavItem>
-                                <NavLink to="/QandA" className="nav-link">Pytania i odpowiedzi</NavLink>
-                            </NavItem>
-                            <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
-                                <DropdownToggle className="nav-link" nav caret>
-                                    O nas
-                                </DropdownToggle>
-                                <DropdownMenu>                                                            
-                                    <DropdownItem><NavLink to="/AboutUs" className="nav-link">Zarząd</NavLink></DropdownItem>                                
-                                    <DropdownItem><NavLink to="/Career" className="nav-link">Kariera</NavLink></DropdownItem>
-                                </DropdownMenu>
-                            </Dropdown>
-                            <NavItem>
-                                <NavLink to="/Loan" className="nav-link">Jak wziąć pożyczke?</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink to="/Contact" className="nav-link">Kontakt</NavLink>
-                            </NavItem>                    
-                        </Nav> 
-                    </ Collapse> 
-                    {/* </Col> */}
+            <header className="header-whole" id="header" style={{transform: `translate(0, ${this.state.visible})`, transition: 'transform .2 linear'}}>
+                <div>
+                    <Container>
+                        <Row className="top-header justify-content-between align-content-center">
+                            <NavbarBrand className="align-content-center logo-container" href={window.location.hostname}>
+                                <img className="logo" src={logo} alt="logo" />
+                            </NavbarBrand>
+                            <Nav className="navbar-nav align-content-center flex-row">
+                                <NavItem  className="navbar-item navbar-item-header align-content-center"><NavLink to="/Contact" className="nav-link nav-link-header">Kontakt</NavLink></NavItem>
+                                <NavItem  className="navbar-item navbar-item-header align-content-center"><NavLink to="/QandA" className="nav-link nav-link-header">Pytania i odpowiedzi</NavLink></NavItem>
+                                <NavItem className="navbar-item navbar-item-header align-content-center navContact">
+                                    <i className="fas fa-phone-volume"></i>
+                                    <span>123 123 123</span>
+                                </NavItem>
+                            </Nav>
+                        </Row>
+                    </Container>
+                </div>
+                <Navbar className="navbar bottom-header-menu sticky-top" color="light" expand="md" light>    
+                    <Container>             
+                        <NavbarToggler onClick={this.toggle}/>
+                        <Collapse isOpen={this.state.isOpen} navbar>
+                            <Nav className="bottom-nav justify-content-between" navbar >
+                                <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
+                                    <DropdownToggle className="nav-link nav-link-header" nav caret>
+                                        O nas
+                                    </DropdownToggle>
+                                    <DropdownMenu>                                                            
+                                        <DropdownItem><NavLink to="/AboutUs" className="nav-link nav-link-header">Zarząd</NavLink></DropdownItem>                                
+                                        <DropdownItem><NavLink to="/Career" className="nav-link nav-link-header">Kariera</NavLink></DropdownItem>
+                                    </DropdownMenu>
+                                </Dropdown>
+                                <NavItem>
+                                    <NavLink to="/Loan" className="nav-link nav-link-header">Jak wziąć pożyczke?</NavLink>
+                                </NavItem>                                                
+                            </Nav> 
+                        </ Collapse>
+                    </Container>    
                 </Navbar>                
-                    {/* </Row> 
-                </Container>                 */}
             </header>
         )
     }

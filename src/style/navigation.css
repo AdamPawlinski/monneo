@@ -1,20 +1,64 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    opacity: .9;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.18), 0 2px 7px 0 rgba(0,0,0,.15);
-    max-height: 10vh;  
+.header-whole {
+    position: fixed;
+    top: 0;
+    left: 0;    
+    width: 100%;  
+    z-index: 100;  
+    background-color: rgb(255,255,255);
 }
 
-.navbar img {
+.top-header {        
     max-height: 8vh;
+    margin: 0 10vw 0 10 vw;
 }
 
-.nav-item:hover {
+.bottom-header-menu {    
+    top: 0;   
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.18), 0 2px 7px 0 rgba(0,0,0,.15);
+    max-height: 8vh; 
+    margin: 0 10vw 0 10 vw; 
+}
+
+.navbar-item-header {      
+    margin: 0 .5rem;
+}
+
+.navbar-brand {
+    padding: 0 .5rem;
+}
+
+.logo {    
+    max-height: 6vh;
+}
+
+.header-whole.scroll .logo-container {
+    position: relative;
+    top: 8vh;
+    z-index: 100;
+}
+
+.header-whole.scroll .bottom-nav {
+    padding-left: 10vw;
+}
+
+.nav-link-header {
+    color: rgb(0,109,165);
+}
+
+.nav-link-header:hover {
     color: rgb(221,19,123);
 } 
 
-.active {
-    color: rgb(0,109,165);
+.navContact {
+    color: rgb(255,255,255);
+    background-color: rgb(0,109,165);
+    min-width: 12vw;
+    height: 8vh;
+    padding: 0 .5rem;
+}
+
+.fa-phone-volume {
+    color: rgb(255,255,255);
+    max-height: 6vh;
+    margin: .5rem;
 }

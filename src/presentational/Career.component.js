@@ -16,7 +16,7 @@ import ReactStrap, {
     Row
     } from 'reactstrap';
 
-    import CareerStyles from "../style/Career.css";
+    import "../style/Career.css";
 
     const Career = () => {
         return (

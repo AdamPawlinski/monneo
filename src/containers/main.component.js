@@ -15,14 +15,28 @@ import NotFound from '../presentational/NotFound.component';
 import {    
     Container, 
     Col,
-    Row
-    } from 'reactstrap';
+    Row,
+    Modal,
+    ModalBody,
+    ModalHeader,
+    ModalFooter,
+    Button
+} from 'reactstrap';
 import mainStyles from '../style/main.css';
 
 class Main extends React.Component {
     constructor(props) {
-        super(props);       
+        super(props);
+        this.state = {
+            cookiesShow: true  
+        }     
     };
+
+    cookiesShowHandler = () => {        
+        this.setState({
+            cookiesShow: false
+        })
+    }
     
     render() {        
         return (
@@ -46,21 +60,17 @@ class Main extends React.Component {
                     </Row>
                 </Container>
                 <Container fluid>
-                    <div className="toast" role="alert" aria-live="assertive" aria-atomic="true" autohide="false">
-                        <div className="toast-header">
-                            <img src="..." className="rounded mr-2" alt="..."/>
-                            <strong className="mr-auto">Bootstrap</strong>
-                            <small className="text-muted">11 mins ago</small>
-                            <button type="button" className="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div className="toast-body">
-                            Hello, world! This is a toast message.
-                        </div>
-                    </div>
+                    <Modal isOpen={this.state.cookiesShow} toggle={this.cookiesShowHandler} className={this.props.className} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }}>
+                        <ModalHeader toggle={this.cookiesShowHandler}>Cookies</ModalHeader>
+                        <ModalBody>
+                            Uprzejmie informujemy, że w ramach naszej witryny używamy plików cookies w celu świadczenia usług na najwyższym poziomie oraz w sposób dostosowany do Twoich indywidualnych preferencji. Korzystanie z witryny bez zmiany ustawień oznacza, że akceptujesz otrzymywanie plików cookies. Zmiany ustawień dla plików cookies możesz dokonać w każdym momencie użytkowania serwisu.
+                        </ModalBody>
+                        <ModalFooter>                        
+                            <Button color="secondary" onClick={this.cookiesShowHandler}>Cancel</Button>
+                        </ModalFooter>
+                    </Modal>
                     <Row>
-                        <Col xl="12" sm="12">
+                        <Col xl="12" sm="12" id="footer-container">
                             <Footer/>
                         </Col>
                     </Row>

@@ -16,7 +16,7 @@ import ReactStrap, {
     Row
     } from 'reactstrap';
 
-    import LoanStyles from "../style/Loan.css";
+    import "../style/Loan.css";
 
     const Loan = () => {
         return (

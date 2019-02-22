@@ -17,7 +17,7 @@ import {
     FormText
 } from 'reactstrap';
 import faker from 'faker';
-import ContactStyles from "../style/Contact.css"
+import "../style/Contact.css";
 import management from "../resources/management.png";
 import { Manager } from 'react-popper';
 class Contact extends React.Component {

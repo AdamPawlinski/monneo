@@ -11,7 +11,7 @@ import {
     Fade
     } from 'reactstrap';
 
-import QandAItemStyles from '../style/QandAItem.css';
+import '../style/QandAItem.css';
 
 class QandAItem extends React.Component {
     constructor(props) {

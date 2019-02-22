@@ -4,7 +4,7 @@ import {
     Col,
     Row
     } from 'reactstrap';
-import policyStyles from '../style/Policy.css';
+import '../style/Policy.css';
 
 
 const Policy = () => {   

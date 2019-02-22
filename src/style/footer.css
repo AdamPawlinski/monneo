@@ -3,50 +3,52 @@
     color: #fff;    
 }
 
-.foot li, .foot button {
-    background-color: rgb(0,109,165);
-}
-
 .foot li {
+    background-color: transparent;
     text-align: left;
 }
 
 .foot li a {
-    color: #fff;;
+    color: #fff;
 }
 
 .foot img {
-    display: flex;
-    align-items: flex-start;
     max-height: 8vh;
 }
 
-.clause {
-    display: flex;
-    justify-content: center;
-    flex-direction: column; 
-    text-align: justify;  
-    padding: 1em; 
+.foot li p {
+    margin-bottom: 0;
 }
 
-.clause-btn,
-.clause-btn:focus,
-.clause-btn:visited {
-    border: none;
+.social {
+    color: rgb(255,255,255);
+    max-width: 5vw;
+}
+
+.social i {
+    margin: 0 1vw;
+    color: rgb(255,255,255);
+    width: 5vw;
+    height: 5vw;
+}
+
+.clause {    
+    font-size: .8rem; 
+}
+
+.footer-clause-btn,
+.footer-clause-btn:hover,
+.footer-clause-btn:active {
+    border-color: transparent;
     box-shadow: none; 
-    color: #fff; 
-    display: flex;
-    justify-content: center;
+    color: #fff;
+    background-color: transparent; 
+    font-size: .8rem;   
 }
 
-.foot-add {
-    display: flex;
-    justify-content: center;
-}
-
-.fade {
+/* .fade {
     display: none;
 }
 .show {
     display: block;
-}
+} */

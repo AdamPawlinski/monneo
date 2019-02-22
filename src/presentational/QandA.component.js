@@ -13,7 +13,7 @@ import {
 
 import QandAItem from './QandA.item.component';
 // import itemsList from './itemsList.json';
-import QandAStyles from '../style/QandA.css';
+import '../style/QandA.css';
 
 const itemsList = [
     {

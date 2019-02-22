@@ -4,7 +4,7 @@ import {
     Col,
     Row
     } from 'reactstrap';
-import policyStyles from '../style/Cookies.css';
+import '../style/Cookies.css';
 
 const Cookies = () => {   
     return (
