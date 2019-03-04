@@ -1,6 +1,33 @@
+.contact-form {
+    background-color: rgb(0,109,165);
+    color: rgb(255,255,255);
+    height: 100%;
+}
+
 .contact-form-clause {
-    display: flex;
-    align-items: flex-start;
+    font-size: .7rem;
+}
+
+.contact-form button {
+    background-color: rgb(221,19,123);
+    color: rgba(255,255,255);  
+}
+
+.contact-form button:hover {    
+    background-color: rgb(255,255,255);
+    color: rgb(221,19,123);
+}
+
+.contact-card {
+    border: none;
+    height: 100%;
+    border-radius: 0;
+}
+
+.contact-card-content {
+    background-color: rgba(0,0,0, .3);
+    color: rgb(0,0,0);
+    border: none;
 }
 
 .contact-card-text {
@@ -9,9 +36,4 @@
 
 .contact-card-text span {
     display: block;
-}
-
-.card {
-    display: flex;
-    align-items: center;
 }

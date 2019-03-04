@@ -22,7 +22,7 @@ import {
     ModalFooter,
     Button
 } from 'reactstrap';
-import mainStyles from '../style/main.css';
+import '../style/Main.css';
 
 class Main extends React.Component {
     constructor(props) {
@@ -41,9 +41,9 @@ class Main extends React.Component {
     render() {        
         return (
             <React.Fragment>                
-                <Navigation />
+                <Navigation className="w-100"/>
                 <Container className="content" fluid>                
-                    <Row>
+                    <Row className="w-100">
                         <Col lg="12" sm="12">
                             <Switch>
                                 <Route exact path="/" component={Home}/>
@@ -69,7 +69,7 @@ class Main extends React.Component {
                             <Button color="secondary" onClick={this.cookiesShowHandler}>Cancel</Button>
                         </ModalFooter>
                     </Modal>
-                    <Row>
+                    <Row className="w-100">
                         <Col xl="12" sm="12" id="footer-container">
                             <Footer/>
                         </Col>

@@ -18,7 +18,7 @@ import ReactStrap, {
     } from 'reactstrap';
 import logo from "../resources/monneo-logo.png";
 import phone from "../resources/phone-volume-solid.svg";
-import '../style/navigation.css';
+import '../style/Navigation.css';
 
 
 class Navigation extends React.Component {
@@ -30,7 +30,6 @@ class Navigation extends React.Component {
         this.state = {
             isOpen: false,
             dropdownOpen: false,
-            visible: 0
         };
     }
 
@@ -51,46 +50,37 @@ class Navigation extends React.Component {
     }
 
     handleScroll() {
+        const navBarHeight = document.documentElement.clientHeight / 100 * 8;
         if (window.scrollY > 0) {
-            this.setState({
-                visible: '-8vh'
-            });
             document.querySelector('#header').classList.add('scroll');
-        } else {
-            this.setState({
-                visible: 0
-            });
+        } else if (window.scrollY <=  navBarHeight) {
             document.querySelector('#header').classList.remove('scroll');
         }
     }
 
     render() {
         return (
-            <header className="header-whole" id="header" style={{transform: `translate(0, ${this.state.visible})`, transition: 'transform .2 linear'}}>
-                <div>
-                    <Container>
-                        <Row className="top-header justify-content-between align-content-center">
-                            <NavbarBrand className="align-content-center logo-container" href={window.location.hostname}>
-                                <img className="logo" src={logo} alt="logo" />
-                            </NavbarBrand>
-                            <Nav className="navbar-nav align-content-center flex-row">
-                                <NavItem  className="navbar-item navbar-item-header align-content-center"><NavLink to="/Contact" className="nav-link nav-link-header">Kontakt</NavLink></NavItem>
-                                <NavItem  className="navbar-item navbar-item-header align-content-center"><NavLink to="/QandA" className="nav-link nav-link-header">Pytania i odpowiedzi</NavLink></NavItem>
-                                <NavItem className="navbar-item navbar-item-header align-content-center navContact">
-                                    <i className="fas fa-phone-volume"></i>
-                                    <span>123 123 123</span>
-                                </NavItem>
-                            </Nav>
-                        </Row>
-                    </Container>
-                </div>
-                <Navbar className="navbar-nav bottom-header-menu sticky-top" color="light" expand="md" light>    
-                    <Container>             
+            <header className="header-whole w-100" id="header">
+                <Container fluid>
+                    <Row className="top-header justify-content-between w-100">
+                        <NavbarBrand className="align-items-middle logo-container" href={window.location.hostname}>
+                            <img className="logo" src={logo} alt="logo" />
+                        </NavbarBrand>
+                        <Nav className="navbar-nav flex-row">
+                            <NavItem  className="navbar-item navbar-item-header "><NavLink to="/Contact" className="nav-link nav-link-header align-items-middle">Kontakt</NavLink></NavItem>
+                            <NavItem  className="navbar-item navbar-item-header"><NavLink to="/QandA" className="nav-link nav-link-header align-items-middle">Pytania i odpowiedzi</NavLink></NavItem>
+                            <NavItem className="navbar-item navbar-item-header navContact">
+                                <i className="fas fa-phone-volume"></i>
+                                <span>123 123 123</span>
+                            </NavItem>
+                        </Nav>
+                    </Row>
+                    <Navbar className="navbar-nav bottom-header-menu sticky-top justify-content-between w-100" color="light" expand="md" light>    
                         <NavbarToggler onClick={this.toggle}/>
                         <Collapse isOpen={this.state.isOpen} navbar>
-                            <Nav className="bottom-nav justify-content-between" navbar >
+                            <Nav className="bottom-nav" navbar >
                                 <Dropdown nav isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
-                                    <DropdownToggle className="nav-link nav-link-header" nav caret>
+                                    <DropdownToggle className="nav-link-header" nav caret>
                                         O nas
                                     </DropdownToggle>
                                     <DropdownMenu>                                                            
@@ -102,9 +92,9 @@ class Navigation extends React.Component {
                                     <NavLink to="/Loan" className="nav-link nav-link-header">Jak wziąć pożyczke?</NavLink>
                                 </NavItem>                                                
                             </Nav> 
-                        </ Collapse>
-                    </Container>    
-                </Navbar>                
+                        </Collapse>                     
+                    </Navbar>  
+                </Container>                 
             </header>
         )
     }

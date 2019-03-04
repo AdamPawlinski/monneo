@@ -12,21 +12,180 @@
     position: relative;
     height: 80vh;
     padding: 20vh 0;
+    margin-bottom: 0;
     background-image: url('../resources/girl-pointing.jpg');
     background-position: center;
     background-size: cover;
-    color: rgb(255,255,255);
+    color: rgba(0,0,0, .8);
 }
 
-.jumbotron-left-container {
-    background-color: rgba(255,255,255, .2); 
+.jumbotron-left-container {     
+    height: 40vh;
+    width: 25vw;
+}
+
+.jumbotron-card-container {    
+    background-color: rgba(0,0,0, .1);
+    height: 100%;
+    border-radius: 0;
+}
+
+.jumbotron-card-deck {
+    background-color: rgba(255,255,255, .3);
+}
+
+.jumbotron-header-subtitle {
+    font-size: 2rem;
+    color: rgba(0,0,0, .7);
+    text-shadow: 0 2px 5px rgba(255,255,255,.18);
+}
+
+.jumbotron-header-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgb(0,109,165);
+    text-shadow: 0 2px 5px rgba(255,255,255,.18);
+}
+
+.jumbotron-card-title {
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.jumbotron-card-subtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 .jumbotron-right-container {
     background-color: rgb(255,255,255);
     width: 25vw;
-    height: 25vh;
+    height: 40vh;
 }
+
+.jumbotron-form-money {
+    padding: 2vh 5vw;
+}
+
+.jumbotron-form-money h3 {
+    color: rgb(0,109,165);
+    font-weight: 800;
+    font-size: 2.5rem;
+    padding: 2vh 0;
+}
+
+.form-range-slider {    
+    width: 40vw;
+    -webkit-appearance: none;
+}
+
+.form-range-slider:focus {
+    outline: none;
+}
+
+/* input range in Webkit browsers */
+  
+.form-range-slider::-webkit-slider-thumb {
+    border: 0px solid rgb(255,255,255);
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background: radial-gradient(rgb(255,255,255), rgb(0,109,165));
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -.75rem;
+}
+
+.form-range-slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: .5rem;
+    cursor: pointer;
+    box-shadow: none;
+    background: rgb(0,109,165);
+    border-radius: 3px;
+    border: 0px solid rgb(0,0,0);
+}
+
+/* input range in Firefox */
+
+.form-range-slider::-moz-range-track {
+    width: 100%;
+    height: .5rem;
+    cursor: pointer;
+    box-shadow: none;
+    background: rgb(0,109,165);
+    border-radius: 3px;
+    border: 0px solid #010101;
+}
+
+.form-range-slider::-moz-range-thumb {
+    box-shadow: none;
+    border: 0px solid rgb(255,255,255);
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background: radial-gradient(rgb(255,255,255), rgb(0,109,165));
+    cursor: pointer;
+    margin-top: -.75rem;
+}
+
+.form-range-slider::-moz-focus-outer {
+    border: 0;
+}
+
+/* input range in MS browser */
+
+.form-range-slider::-ms-track {
+    width: 100%;
+    height: .5rem;
+    cursor: pointer;
+    box-shadow: none;
+    background: transparent;
+    border-color: transparent;
+    border-width: 1rem 0;
+}
+
+.form-range-slider::-ms-thumb {
+    border: 0px solid rgb(255,255,255);
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background: radial-gradient(rgb(255,255,255), rgb(0,109,165));
+    cursor: pointer;
+    margin-top: 0;
+}
+
+.form-range-slider::-ms-fill-lower {
+    background:  rgb(0,109,165);
+    border-radius: 3px;
+}
+
+.form-range-slider::-ms-fill-upper {
+    background:  rgb(0,109,165);
+    border-radius: 3px;
+}
+
+/* button styling */
+
+.jumbotron-form-money input[type=submit] {
+    background-color: rgb(221,19,123);
+    color: rgba(255,255,255); 
+    border: none;
+    border-radius: 5%;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+}
+
+.jumbotron-form-money input[type=submit]:hover {
+    background-color: rgb(255,255,255);
+    color: rgb(221,19,123);
+}
+
+/* second screen - texts */
 
 .second-container {
     height: 50vh;
@@ -37,10 +196,24 @@
     color: rgb(221,19,123);
 }
 
+.second-container-left-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .second-container-right {
     background-color: rgb(255,255,255);
     color: rgba(0,0,0, .5);
 }
+
+.second-container-right-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* third screen - three steps to credit */
 
 .third-container {
     height: 60vh;
@@ -49,8 +222,24 @@
     background-color: #F7F7F7;
 }
 
-.third-container h3 {
+.third-container-header {
+    padding: 5vh 0;
+}
+
+.third-container-header h3 {
     color: rgb(0,109,165);
+}
+
+.third-container-cards {
+    margin: 0 5vh 5vh 5vh;
+}
+
+.third-container-card {
+    border: none;
+    background-color: rgb(247,247,247);
+    padding: .5rem;
+    margin: 0 auto;
+    display: block;
 }
 
 .third-container-card-title {
@@ -59,20 +248,30 @@
 
 .third-container-card-image {
     box-shadow:  0 2px 5px 0 rgba(0,0,0,.18), 0 2px 7px 0 rgba(0,0,0,.15);
-    max-width: 10vw;
+    width: 7rem;
+    padding: .5rem;
     border: none;
     border-radius: 50%;
-    position: center;
-    height: 12vh;
+    height: 7rem;
 }
+
+/* fourth screen - text easy credit and image */
 
 .fourth-container {
     height: 80vh;
+    width: 100%;
+}
+
+.fourth-container-left-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 5vw;
 }
 
 .fourth-container-left h3 {
     color: rgb(221,19,123);
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .fourth-container-right {
@@ -81,11 +280,14 @@
     background-size: cover;
 }
 
+/* animated down arrow */
+
 .arrow-container {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100vw;    
+    right: 0;
+    width: 100vw; 
 }
 
 .arrow-background {

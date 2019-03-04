@@ -4,17 +4,19 @@ import {
     Container, 
     Col,
     Row,
+    Nav,
+    NavItem,    
     Button,
     Fade,
     Collapse,
     CardBody, 
     Card
     } from 'reactstrap';
-import logo from '../resources/monneo-logo_white.png';
+import logo from '../resources/monneo-logo-blue.png';
 import facebook from '../resources/facebook-square-brands.svg';
 import linkedin from '../resources/linkedin-brands.svg';
 import information from '../resources/info-circle-solid.svg';
-import '../style/footer.css';
+import '../style/Footer.css';
 
 class Footer extends React.Component {
     constructor (props) {
@@ -22,81 +24,67 @@ class Footer extends React.Component {
         this.state = {
             fadeIn: false
         };        
-        this.toggle = this.toggle.bind(this);
+        // this.toggle = this.toggle.bind(this);
     }
 
-    // toggle() {
+    //    turn off till client decision
+
+    // toggle() {        
     //     this.setState({
     //         fadeIn: !this.state.fadeIn
     //     });
-    //     const btn = document.querySelector('#footer-btn');
-    //     const clauseFade = document.querySelector('#footer-clause-fade');
-    //     if (this.state.fadeIn === true) {            
-    //         btn.remove();     
-    //         setTimeout(clauseFade.after(
-    //             <Button className="footer-clause-btn" id="footer-btn" color="light" onClick={this.toggle}>zwiń</Button>
-    //         )); 
-    //     }
-    //     else {
-    //         btn.remove(btn);
-    //         clauseFade.before(
-    //             <Button className="footer-clause-btn" id="footer-btn" color="light" onClick={this.toggle}>rozwiń</Button>
-    //         );
+        
+    // }
+
+    // componentDidUpdate() {
+    //     const button = document.querySelector('#footer-btn');
+    //     if (this.state.fadeIn === false) {
+    //         button.textContent = 'rozwiń';
+    //     } else {
+    //         button.textContent = 'zwiń';
     //     }
     // }
-    toggle() {        
-        this.setState({
-            fadeIn: !this.state.fadeIn
-        });
-        
-    }
-
-    componentDidUpdate() {
-        const button = document.querySelector('#footer-btn');
-        if (this.state.fadeIn === false) {
-            button.textContent = 'rozwiń';
-        } else {
-            button.textContent = 'zwiń';
-        }
-    }
 
     render() {
         return (
             <footer>
-                <Container className="foot" fluid>
+                <Container className="foot w-100" fluid>
                     <Row>   
-                        <Col className="text-left py-4" lg={{size:5, offset:1}}><img src={logo}/></Col>
-                        <Col lg="6">
-                            <div className="d-inline-block text-nowrap justify-content-start align-content-center social py-4">
-                                    <a href="#"><i className="fab fa-facebook-square"></i></a>
-                                    <a href="#"><i className="fab fa-linkedin"></i></a>
-                                    <a href="#"><i className="fas fa-info-circle"></i></a>
+                        <Col className="align-content-center py-1" lg={{size:3, offset:1}}><a href={window.location.hostname}><img src={logo}/></a></Col>
+                        <Col lg="4" className="foot-address py-4">
+                            <p>
+                                Monneo S.A.
+                            </p>
+                            <p>
+                                biuro@monneo.pl
+                            </p>
+                            <p>    
+                                ul. ..........
+                                Wrocław, tel. .........
+                            </p>
+                            <p> 
+                                REGON: 381640767 | 
+                                KRS: 0000754195 | 
+                                NIP: 896-158-20-36
+                            </p>                            
+                        </Col> 
+                        <Col lg="3" className="align-content-center py-1">
+                            <div className="d-inline-block text-nowrap text-left align-content-center social">
+                                    <a href="#" className=""><i className="fab fa-facebook-square social-logo"></i></a>
+                                    <a href="#"><i className="fab fa-linkedin social-logo"></i></a>
+                                    <a href="#"><i className="fas fa-info-circle social-logo"></i></a>
                             </div>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col lg={{size:4, offset:1}} sm="12">
-                            <ul className="list-group list-group-flush">
-                                <li className="list-group-item"><NavLink to="/Policy" >Polityka prywatności</NavLink></li>
-                                <li className="list-group-item"><NavLink to="/Cookies" >Cookies</NavLink></li>
-                                <li className="list-group-item"><NavLink to="/Contact" >Kontakt</NavLink></li>
-                            </ul>
-                        </Col>
-                        <Col lg="2" sm="12">
-                        </Col>
-                        <Col lg="4" sm="12" className="justify-content-center">
-                            <ul>
-                                <li>biuro@monneo.pl</li>
-                                <li>ul. ..........</li>
-                                <li>Wrocław</li>
-                                <li>tel. .........</li>
-                                <li>REGON: 381640767</li>
-                                <li>KRS: 0000754195</li>
-                                <li>NIP: 896-158-20-36</li>
-                            </ul>
-                        </Col>
+                    <Row className="justify-content-center">
+                        <Nav className="nav flex-row text-center justify-content-between py-4">
+                            <NavItem className="navbar-item navbar-item-footer text-center text-nowrap mx-4"><NavLink className="nav-link nav-link-footer" to="/Policy" >Polityka prywatności</NavLink></NavItem>
+                            <NavItem className="navbar-item navbar-item-footer mx-4"><NavLink className="nav-link nav-link-footer" to="/Cookies" >Cookies</NavLink></NavItem>
+                            <NavItem className="navbar-item navbar-item-footer mx-4"><NavLink className="nav-link nav-link-footer" to="/Contact" >Kontakt</NavLink></NavItem>
+                        </Nav>
                     </Row>
-                    <Row>
+                    {/* clause below hided till clients decision */}
+                    {/* <Row>
                         <Col lg={{size: 10, offset: 1}} sm="12" className="clause justify-content-center">                                            
                             <p className="text-justify">
                                 Monneo S.A. z siedzibą w Radwanicach (55-010) przy ul. Pogodna 22G, telefon ........... . NIP: 896-158-20-36, REGON: 381640767. Sąd Rejonowy dla Wrocławia, XIII Wydział Gospodarczy Krajowego Rejestru Sądowego, KRS 0000754195. Kapitał zakładowy w wysokości 200 000,00 zł.
@@ -127,7 +115,7 @@ class Footer extends React.Component {
                                 </p> 
                             </Collapse> 
                         </Col>                                               
-                    </Row>
+                    </Row> */}
                 </Container>
             </footer>
         )

@@ -2,7 +2,8 @@
 
 .App {
   text-align: center;
-  font-family: 'Exo', Tahoma, sans-serif;
+  font-family: 'Exo', Tahoma, sans-serif;  
+  width: 100%;
 }
 
 li {
@@ -13,5 +14,9 @@ li {
   padding: 0;
 }
 
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
 
 

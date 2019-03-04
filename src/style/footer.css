@@ -1,38 +1,37 @@
 .foot {
-    background-color: rgb(0,109,165);
-    color: #fff;    
-}
-
-.foot li {
-    background-color: transparent;
-    text-align: left;
-}
-
-.foot li a {
-    color: #fff;
+    background-color:rgb(247,247,247);
+    color: rgb(0,109,165); 
+    font-size: .7rem;
 }
 
 .foot img {
-    max-height: 8vh;
+    max-width: 12vw;
+    margin-top: 1rem;
 }
 
-.foot li p {
-    margin-bottom: 0;
+.foot-address p {
+    margin: .3rem 0;
+    font-size: .8rem;
 }
 
 .social {
-    color: rgb(255,255,255);
-    max-width: 5vw;
+    color: rgb(0,109,165);
+    max-width: 20vw;    
+    margin: 2rem auto;
 }
 
-.social i {
+.social-logo::before {
     margin: 0 1vw;
-    color: rgb(255,255,255);
-    width: 5vw;
-    height: 5vw;
+    color: rgb(0,109,165);
+    font-size: 2rem;
 }
 
-.clause {    
+.navbar-item-footer {
+    width: 6rem;
+}
+
+/* clause below hidden till clients decision */
+/* .clause {    
     font-size: .8rem; 
 }
 
@@ -44,11 +43,4 @@
     color: #fff;
     background-color: transparent; 
     font-size: .8rem;   
-}
-
-/* .fade {
-    display: none;
-}
-.show {
-    display: block;
 } */
