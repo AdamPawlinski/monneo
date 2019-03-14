@@ -11,7 +11,9 @@ import {
     CardSubtitle, 
     Button
 } from 'reactstrap';
-import faker from 'faker';
+import '../style/AboutUs.css';
+import manager from '../resources/CEO.jpg';
+import managerSnd from '../resources/businessman.jpg';
 
 class AboutUs extends React.Component {
     constructor(props) {
@@ -20,16 +22,44 @@ class AboutUs extends React.Component {
 
     render() {
         return (            
-            <div>
-                <Card>
-                    <CardImg top height="auto" max-width="100%" className="img-fluid" src={require('../resources/management.png')} alt="management" />
-                    <CardBody>
-                        <CardTitle>Zarząd</CardTitle>
-                        <CardSubtitle>Monneo S.A.</CardSubtitle>
-                        <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>                    
-                    </CardBody>
-                </Card>
-            </div>
+            <Container fluid>
+                <Row>
+                    <Col lg={{size: 10, offset: 1}} className="justify-content-center">
+                        <Card className="p-4">
+                            <div className="aboutUs-card row no-gutters">
+                                <Col lg="4"> 
+                                    <CardImg top height="auto" width="80%" className="img-fluid" src={manager} alt="management" />
+                                </Col>
+                                <Col lg="8">
+                                    <CardBody>
+                                        <CardTitle className="text-uppercase font-weight-bold">Prezes</CardTitle>
+                                        <CardSubtitle>Monneo S.A.</CardSubtitle>
+                                        <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>                    
+                                    </CardBody>
+                                </Col>
+                            </div>
+                        </Card>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col lg={{size: 10, offset: 1}} className="justify-content-center">
+                        <Card className="p-4">
+                            <div className="aboutUs-card row no-gutters">
+                                <Col lg="4"> 
+                                    <CardImg top height="auto" width="80%" className="img-fluid" src={managerSnd} alt="management" />
+                                </Col>
+                                <Col lg="8">
+                                    <CardBody>
+                                        <CardTitle className="text-uppercase font-weight-bold">Dyrektor Zarządzający</CardTitle>
+                                        <CardSubtitle>Monneo S.A.</CardSubtitle>
+                                        <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>                    
+                                    </CardBody>
+                                </Col>
+                            </div>
+                        </Card>
+                    </Col>
+                </Row>
+            </Container>
         )
     }
 }

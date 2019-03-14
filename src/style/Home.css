@@ -217,7 +217,6 @@
 
 .third-container {
     height: 60vh;
-    width: 100%;
     color: rgba(0,0,0, .5);
     background-color: #F7F7F7;
 }
@@ -259,7 +258,6 @@
 
 .fourth-container {
     height: 80vh;
-    width: 100%;
 }
 
 .fourth-container-left-content {
@@ -287,7 +285,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    width: 100vw; 
+    width: 100%; 
 }
 
 .arrow-background {

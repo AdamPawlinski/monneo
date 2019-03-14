@@ -121,7 +121,7 @@ class Home extends React.Component {
 
         return (            
             <Container fluid>
-                <Jumbotron className="jumbotron align-items-center w-100">
+                <Jumbotron className="jumbotron align-items-center">
                     <Row>
                         <Col className="jumbotron-left-container" lg={{size:5, offset:1}}> 
                             <Card className="jumbotron-card-container border-0 px-2">
@@ -151,16 +151,16 @@ class Home extends React.Component {
                         </Col>
                         <Col className="jumbotron-right-container">
                             <div>
-                                <Form className="jumbotron-form-money align-items-center" action="" method="POST">
+                                <Form className="jumbotron-form-money align-items-center" action="https://docs.google.com/forms/d/e/1FAIpQLSd43PFNUqBRMRxDOv2ZLhlXHUs7Hk-oyhm9Hi8b68Pn1mu8jg/formResponse" method="POST">
                                     <FormGroup className="justify-content-between align-items-center py-3" row> 
                                         <label htmlFor="money">Ile chcesz pożyczyć?</label> 
                                         <h3 className="d-inline-block">{this.state.moneyValue} PLN</h3>
-                                        <input className="form-control-range form-range-slider" value={this.state.moneyValue} onChange={e => this.moneyValueHandler(e)} type="range" name="" min="100" max="1500" step="50" id="money"/>
+                                        <input className="form-control-range form-range-slider" value={this.state.moneyValue} onChange={e => this.moneyValueHandler(e)} type="range" name="entry.1753271994" min="100" max="1500" step="50" id="money"/>
                                     </FormGroup>
                                     <FormGroup className="justify-content-between align-items-center py-3" row> 
                                         <label htmlFor="time">Na jak długo?</label> 
                                         <h3 className="d-inline-block">{this.state.timeValue} miesięcy</h3>
-                                        <input className="form-control-range form-range-slider" value={this.state.timeValue} onChange={e => this.timeValueHandler(e)} type="range" name="" min="1" max="12" step="1" id="time"/>
+                                        <input className="form-control-range form-range-slider" value={this.state.timeValue} onChange={e => this.timeValueHandler(e)} type="range" name="entry.1845184182" min="1" max="12" step="1" id="time"/>
                                     </FormGroup>
                                     <input className="py-2 px-3" type="submit"/>
                                 </Form>
@@ -187,7 +187,7 @@ class Home extends React.Component {
                         <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
                     </Carousel> */}
                 </Jumbotron>
-                <Row className="second-container w-100">
+                <Row className="second-container">
                     <Col className="second-container-left align-items-center" lg="6">
                         <div className="second-container-left-content text-left px-5">
                             <span>___</span>
@@ -202,7 +202,7 @@ class Home extends React.Component {
                         </div>              
                     </Col>   
                 </Row>                
-                <Container fluid className="third-container w-100">
+                <Container fluid className="third-container">
                     <Row className="third-container-header">
                         <Col className="justify-content-center text-center" lg={{size: 4, offset: 4}}>
                             <h4 className="h4">Twój kredyt</h4>
@@ -242,7 +242,7 @@ class Home extends React.Component {
                         </Col>   
                     </Row>
                 </Container>
-                <Row className="fourth-container w-100">
+                <Row className="fourth-container">
                     <Col className="fourth-container-left" lg="6">
                         <div  className="fourth-container-left-content">                            
                             <h3 className="h3 text-right">Szybkie i łatwe pożyczki online</h3>

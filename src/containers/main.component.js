@@ -40,11 +40,13 @@ class Main extends React.Component {
     
     render() {        
         return (
-            <React.Fragment>                
-                <Navigation className="w-100"/>
+            <React.Fragment> 
+                <Container fluid>                
+                    <Navigation/>
+                </Container>
                 <Container className="content" fluid>                
-                    <Row className="w-100">
-                        <Col lg="12" sm="12">
+                    <Row>
+                        <Col className="content-container">
                             <Switch>
                                 <Route exact path="/" component={Home}/>
                                 <Route exact path="/QandA" component={QandA}/>
@@ -56,20 +58,20 @@ class Main extends React.Component {
                                 <Route exact path="/Cookies" component={Cookies}/>
                                 <Route path="*" component={NotFound}/>                                     
                             </Switch>
+                            <Modal isOpen={this.state.cookiesShow} toggle={this.cookiesShowHandler} className={this.props.className} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }}>
+                                <ModalHeader toggle={this.cookiesShowHandler}>Cookies</ModalHeader>
+                                <ModalBody>
+                                    Uprzejmie informujemy, że w ramach naszej witryny używamy plików cookies w celu świadczenia usług na najwyższym poziomie oraz w sposób dostosowany do Twoich indywidualnych preferencji. Korzystanie z witryny bez zmiany ustawień oznacza, że akceptujesz otrzymywanie plików cookies. Zmiany ustawień dla plików cookies możesz dokonać w każdym momencie użytkowania serwisu.
+                                </ModalBody>
+                                <ModalFooter>                        
+                                    <Button color="secondary" onClick={this.cookiesShowHandler}>Cancel</Button>
+                                </ModalFooter>
+                            </Modal>
                         </Col>
                     </Row>
                 </Container>
-                <Container fluid>
-                    <Modal isOpen={this.state.cookiesShow} toggle={this.cookiesShowHandler} className={this.props.className} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }}>
-                        <ModalHeader toggle={this.cookiesShowHandler}>Cookies</ModalHeader>
-                        <ModalBody>
-                            Uprzejmie informujemy, że w ramach naszej witryny używamy plików cookies w celu świadczenia usług na najwyższym poziomie oraz w sposób dostosowany do Twoich indywidualnych preferencji. Korzystanie z witryny bez zmiany ustawień oznacza, że akceptujesz otrzymywanie plików cookies. Zmiany ustawień dla plików cookies możesz dokonać w każdym momencie użytkowania serwisu.
-                        </ModalBody>
-                        <ModalFooter>                        
-                            <Button color="secondary" onClick={this.cookiesShowHandler}>Cancel</Button>
-                        </ModalFooter>
-                    </Modal>
-                    <Row className="w-100">
+                <Container fluid>                    
+                    <Row>
                         <Col xl="12" sm="12" id="footer-container">
                             <Footer/>
                         </Col>

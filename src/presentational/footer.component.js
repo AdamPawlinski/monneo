@@ -68,9 +68,9 @@ class Footer extends React.Component {
                                 NIP: 896-158-20-36
                             </p>                            
                         </Col> 
-                        <Col lg="3" className="align-content-center py-1">
-                            <div className="d-inline-block text-nowrap text-left align-content-center social">
-                                    <a href="#" className=""><i className="fab fa-facebook-square social-logo"></i></a>
+                        <Col lg="3" className="py-1">
+                            <div className="d-inline-block text-nowrap text-left social">
+                                    <a href="#"><i className="fab fa-facebook-square social-logo"></i></a>
                                     <a href="#"><i className="fab fa-linkedin social-logo"></i></a>
                                     <a href="#"><i className="fas fa-info-circle social-logo"></i></a>
                             </div>

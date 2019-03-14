@@ -1,7 +1,13 @@
+.qAndA-item {
+    border: none;
+    background-color: rgb(247,247,247);
+    box-shadow:  0 2px 5px 0 rgba(0,0,0,.18), 0 2px 7px 0 rgba(0,0,0,.15);
+}
+
 .qAndA-header {
     display: flex;
     flex-direction: row;
-    align-items: center;    
+    align-items: center;  
 }
 
 .qAndA-header h5 {
@@ -11,7 +17,19 @@
 .qAndA-open-btn {
     font-weight: 600;
 }
+
 .qAndA-text {
     text-align: justify;
-    margin-left: 5%;
+    margin-left: 5%;   
 }
+
+.fade {
+    display: none;
+}
+
+.fade.show {
+    display: block;
+}
+
+
+

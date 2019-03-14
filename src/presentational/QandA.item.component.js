@@ -22,22 +22,21 @@ class QandAItem extends React.Component {
         this.toggle = this.toggle.bind(this);
     };
 
-    toggle() {
+    toggle(e) {
         this.setState({
             fadeIn: !this.state.fadeIn
-        })
+        })        
     };       
 
     render() {
         return (                            
-            <ListGroupItem key={this.props.item.id}>
-                <header className="qAndA-header">
-                    <Button className="qAndA-open-btn" color="light" onClick={this.toggle}>></Button>
-                    <ListGroupItemHeading>{this.props.item.itemHead}</ListGroupItemHeading>                     
+            <ListGroupItem className="qAndA-item" key={this.props.item.id}>
+                <header className="qAndA-header" onClick={this.toggle}>                    
+                    <ListGroupItemHeading className="qAndA-open-btn"> {this.props.item.itemHead}</ListGroupItemHeading>                     
                 </header>
-                <Fade in={this.state.fadeIn}>
+                <Fade in={this.state.fadeIn} timeout={300}>
                     <ListGroupItemText className="qAndA-text">
-                        {this.props.item.itemText}                      
+                        {this.props.item.itemText}                
                     </ListGroupItemText>
                 </Fade>
             </ListGroupItem>

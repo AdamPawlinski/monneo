@@ -1,6 +1,15 @@
-.item-qAndA {
-    display: flex;
-    justify-content: start;
+.qAndA-body {
+    border: none;
+}
+
+.qAndA-title {
+    color: rgb(0,109,165);
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+.qAndA-list {
+    width: 70vw;
 }
 
 .row-qAndA {

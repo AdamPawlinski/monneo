@@ -20,7 +20,7 @@
     margin: 2rem auto;
 }
 
-.social-logo::before {
+.social-logo {
     margin: 0 1vw;
     color: rgb(0,109,165);
     font-size: 2rem;

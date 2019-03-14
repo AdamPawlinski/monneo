@@ -84,8 +84,8 @@ class Navigation extends React.Component {
                                         O nas
                                     </DropdownToggle>
                                     <DropdownMenu>                                                            
-                                        <DropdownItem><NavLink to="/AboutUs" className="nav-link nav-link-header">Zarząd</NavLink></DropdownItem>                                
-                                        <DropdownItem><NavLink to="/Career" className="nav-link nav-link-header">Kariera</NavLink></DropdownItem>
+                                        <DropdownItem className="bg-transparent"><NavLink to="/AboutUs" className="nav-link nav-link-header">Zarząd</NavLink></DropdownItem>                                
+                                        <DropdownItem className="bg-transparent"><NavLink to="/Career" className="nav-link nav-link-header">Kariera</NavLink></DropdownItem>
                                     </DropdownMenu>
                                 </Dropdown>
                                 <NavItem>

@@ -7,6 +7,9 @@ import {
     ListGroupItem,
     ListGroupItemHeading,
     ListGroupItemText,
+    Card,
+    CardBody,
+    CardTitle,
     Button,
     Fade
     } from 'reactstrap';
@@ -48,36 +51,40 @@ const itemsList = [
 
 
 class QandA extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            fadeIn: false
-        }
-        this.toggle = this.toggle.bind(this);        
-    };
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         fadeIn: false
+    //     }
+    //     this.toggle = this.toggle.bind(this);        
+    // };
 
-    toggle() {
-        this.setState({
-            fadeIn: !this.state.fadeIn
-        })
-    }
+    // toggle() {
+    //     this.setState({
+    //         fadeIn: !this.state.fadeIn
+    //     })
+    // }
 
     render() {        
-        return (
-            <React.Fragment>                           
-                <Row className="row-qAndA">
-                    <Col>
-                        <h2>Pytania i odpowiedzi</h2>
+        return ( 
+            <Container fluid>
+                <Row>
+                    <Col lg={{size: 10, offset:1}} className="justify-content-center">             
+                        <Card className="my-2 py-2"> 
+                            <CardBody className="qAndA-body"> 
+                                <CardTitle className="qAndA-title">Pytania i odpowiedzi</CardTitle>        
+                                <ListGroup className="qAndA-list">
+                                    {   
+                                        itemsList.map(
+                                            (item) => <QandAItem item={item} key={item.id}/>
+                                        )    
+                                    }
+                                </ListGroup>
+                            </CardBody>
+                        </Card>
                     </Col>
-                </Row>             
-                <ListGroup className="item-qAndA" lg={{size:10, offset:1}}>
-                    {   
-                        itemsList.map(
-                            (item) => <QandAItem item={item} key={item.id}/>
-                        )    
-                    }
-                </ListGroup>
-            </React.Fragment>
+                </Row>
+            </Container> 
         )
     }
 }
