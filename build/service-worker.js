@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/monneo/precache-manifest.5c3b95690ec0fd4835e7b957804cf9f9.js"
+  "/monneo/precache-manifest.2e2716ee1a0ee50aeccb2b8e945cedf2.js"
 );
 
 workbox.clientsClaim();

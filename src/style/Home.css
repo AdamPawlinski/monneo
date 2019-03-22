@@ -216,7 +216,7 @@
 /* third screen - three steps to credit */
 
 .third-container {
-    height: 60vh;
+    height: 80vh;
     color: rgba(0,0,0, .5);
     background-color: #F7F7F7;
 }
@@ -276,6 +276,7 @@
     background-image: url('../resources/portrait-of-a-businesswoman.jpg');
     background-position: center;
     background-size: cover;
+    max-height: 80vh;
 }
 
 /* animated down arrow */
