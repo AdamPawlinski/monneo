@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/monneo/static/media/phone-volume-solid.e034ffa5.svg"
   },
   {
-    "revision": "86bd74fe075f90e7f16b",
-    "url": "/monneo/static/css/main.1d7f5fcb.chunk.css"
+    "revision": "02b2843fdf8960109b7b",
+    "url": "/monneo/static/css/main.f4059f4f.chunk.css"
   },
   {
     "revision": "8bad87734ac6c834243fa4eb96cc1fe1",
@@ -40,8 +40,8 @@ self.__precacheManifest = [
     "url": "/monneo/static/media/hand-of-a-businessman-signing.fc49d42f.jpg"
   },
   {
-    "revision": "86bd74fe075f90e7f16b",
-    "url": "/monneo/static/js/main.86bd74fe.chunk.js"
+    "revision": "02b2843fdf8960109b7b",
+    "url": "/monneo/static/js/main.02b2843f.chunk.js"
   },
   {
     "revision": "3c1db105de61e79f2f3929dce5edf330",
@@ -80,7 +80,7 @@ self.__precacheManifest = [
     "url": "/monneo/static/css/1.6dafa331.chunk.css"
   },
   {
-    "revision": "6dbf308083ba95972d212eabe0bb1c4c",
+    "revision": "5533caeb04bcb51d907df9d100d308bc",
     "url": "/monneo/index.html"
   }
 ];
